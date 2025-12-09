@@ -9,6 +9,8 @@ export default defineConfig(({ mode }) => {
   let API_URL = env.VITE_APP_BASE_NAME || '/';
   // ensure it ends with slash
   if (!API_URL.endsWith('/')) API_URL = API_URL + '/';
+  // this sets a default port to 3000
+  const PORT = `${'3000'}`;
 
   return {
     server: {
