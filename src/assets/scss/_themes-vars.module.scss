@@ -1,0 +1,104 @@
+$primary: #1E3A8A;        // biru elegan utama (indigo navy modern)
+$primary100: #3B82F6;     // biru terang untuk hover
+$primaryDark: #162C6A;    // biru tua untuk teks atau shadow
+$primaryLight: #60A5FA;   // untuk elemen lembut (hover, border)
+
+$secondary: #425466;
+$secondaryDark: #272f33;
+$secondaryLight: #60696d;
+
+$error: #ff413a;
+$errorDark: #a20e00;
+$errorLight: #ec4333;
+
+$warning: #f4a100;
+$warningDark: #aa7000;
+$warningLight: #f6b333;
+
+$info: #2563EB;           // selaras dengan biru utama
+$infoDark: #1E40AF;
+$infoLight: #60A5FA;
+
+$success: #00ac69;
+$successDark: #007849;
+$successLight: #33bc87;
+
+$grey300: #425466;
+$dark: #343a40;
+
+$bg100: #f8f8f9;
+
+// Text Colors
+$textPrimary: #1e293b;    // lebih netral untuk kombinasi biru
+$textSecondary: #334155;
+$textDark: #0f172a;
+$textHint: #64748b;
+
+// Text Dark Color
+$textDarkPrimary: #cbd5e1;
+$textDarkSecondary: #94a3b8;
+$textDarkDark: #ffffff;
+$texDarkHint: #a1a1aa;
+
+// Background Color
+$background: #f1f5f9;
+$backgoundDark: #1e293b;
+
+// Paper Color
+$paper: #ffffff;
+$paperDark: #232b38;
+
+$menuHover: #E0E7FF;
+
+// this will use in javascript
+:export {
+  primary: $primary;
+  primaryDark: $primaryDark;
+  primaryLight: $primaryLight;
+  primary100: $primary100;
+
+  secondary: $secondary;
+  secondaryDark: $secondaryDark;
+  secondaryDark: $secondaryDark;
+
+  error: $error;
+  errorDark: $errorDark;
+  errorLight: $errorLight;
+
+  warning: $warning;
+  warningDark: $warningDark;
+  warningLight: $warningLight;
+
+  info: $info;
+  infoDark: $infoDark;
+  infoLight: $infoLight;
+
+  success: $success;
+  successDark: $successDark;
+  successLight: $successLight;
+
+  grey300: $grey300;
+
+  bg100: $bg100;
+
+  // Text Colors
+  textPrimary: $textPrimary;
+  textSecondary: $textSecondary;
+  textDark: $textDark;
+  textHint: $textHint;
+
+  // Text Dark Colors
+  textDarkPrimary: $textDarkPrimary;
+  textDarkSecondary: $textDarkSecondary;
+  textDarkDark: $textDarkDark;
+  textDarkHint: $texDarkHint;
+
+  // Background Color
+  background: $background;
+  backgoundDark: $backgoundDark;
+
+  // Paper Color
+  paper: $paper;
+  paperDark: $paperDark;
+  menuHover: $menuHover;
+}
