@@ -4,7 +4,10 @@ import React from 'react';
 import { useTheme } from '@mui/material/styles';
 import { Grid, Card, CardContent, CardActions, Typography, Button, Box, Avatar, Container } from '@mui/material';
 
-// icons for manual menu cards
+// router
+import { Link } from 'react-router-dom';
+
+// icons
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import FolderOutlinedIcon from '@mui/icons-material/FolderOutlined';
 import PeopleOutlinedIcon from '@mui/icons-material/PeopleOutlined';
@@ -15,14 +18,31 @@ import Inventory2OutlinedIcon from '@mui/icons-material/Inventory2Outlined';
 const Default = () => {
   const theme = useTheme();
 
-  // jangan prefiх BASE di sini — biarkan path route ("/anggota", "/tagihan", dsb.)
   const menuCards = [
-    { id: 'dashboard', title: 'Dashboard', url: '/dashboard', icon: HomeOutlinedIcon, description: 'Ringkasan...' },
-    { id: 'administrasi', title: 'Administrasi', url: '/surat-masuk', icon: FolderOutlinedIcon, description: 'Manajemen surat...' },
-    { id: 'anggota', title: 'Anggota', url: '/anggota', icon: PeopleOutlinedIcon, description: 'Daftar anggota...' },
-    { id: 'tagihan', title: 'Tagihan', url: '/tagihan', icon: CreditCardOutlinedIcon, description: 'Kelola tagihan...' },
-    { id: 'keuangan', title: 'Keuangan', url: '/keuangan', icon: BarChartOutlinedIcon, description: 'Laporan dan arus kas' },
-    { id: 'inventaris', title: 'Inventarisasi', url: '/inventaris', icon: Inventory2OutlinedIcon, description: 'Manajemen barang...' }
+    { id: 'dashboard', title: 'Dashboard', url: '/dashboard', icon: HomeOutlinedIcon, description: 'Ringkasan dan daftar menu aplikasi' },
+    {
+      id: 'administrasi',
+      title: 'Administrasi',
+      url: '/surat-masuk',
+      icon: FolderOutlinedIcon,
+      description: 'Manajemen surat, arsip, dan file asrama'
+    },
+    {
+      id: 'anggota',
+      title: 'Anggota',
+      url: '/anggota',
+      icon: PeopleOutlinedIcon,
+      description: 'Daftar anggota dan profil penghuni asrama'
+    },
+    { id: 'tagihan', title: 'Tagihan', url: '/tagihan', icon: CreditCardOutlinedIcon, description: 'Kelola tagihan dan pembayaran asrama' },
+    { id: 'keuangan', title: 'Keuangan', url: '/keuangan', icon: BarChartOutlinedIcon, description: 'Laporan keuangan dan arus kas ' },
+    {
+      id: 'inventaris',
+      title: 'Inventarisasi',
+      url: '/inventaris',
+      icon: Inventory2OutlinedIcon,
+      description: 'Manajemen barang dan aset Asrama'
+    }
   ];
 
   const topRow = menuCards.slice(0, 3);
@@ -39,7 +59,7 @@ const Default = () => {
             flexDirection: 'column',
             justifyContent: 'space-between',
             borderRadius: 2,
-            width: '100%' // memastikan card benar-benar mengisi kolom
+            width: '100%'
           }}
         >
           <CardContent>
@@ -51,12 +71,10 @@ const Default = () => {
                   height: 48
                 }}
               >
-                {IconComponent ? <IconComponent /> : null}
+                {IconComponent && <IconComponent />}
               </Avatar>
               <Box>
-                <Typography variant="subtitle1" component="div">
-                  {m.title}
-                </Typography>
+                <Typography variant="subtitle1">{m.title}</Typography>
                 {m.description && (
                   <Typography variant="caption" color="text.secondary">
                     {m.description}
@@ -67,7 +85,8 @@ const Default = () => {
           </CardContent>
 
           <CardActions sx={{ px: 2, pb: 2 }}>
-            <Button size="small" variant="contained" href={m.url}>
+            {/* 🔥 Navigasi SPA tanpa refresh */}
+            <Button size="small" variant="contained" component={Link} to={m.url}>
               Buka Aplikasi
             </Button>
           </CardActions>
@@ -77,8 +96,6 @@ const Default = () => {
   };
 
   return (
-    // disableGutters supaya Container tidak menambahkan padding besar otomatis
-    // lalu kita atur padding horizontal sendiri dengan px yang lebih kecil
     <Container maxWidth="xl" disableGutters sx={{ p: 0 }}>
       <Box sx={{ height: { xs: 8, md: 0 } }} />
 
@@ -93,12 +110,11 @@ const Default = () => {
               p: 2,
               borderRadius: 2,
               background: 'linear-gradient(160deg, #1E3A8A 10%, #60A5FA 50%, #ffffff 100%)',
-              boxShadow: 1,
-              overflow: 'hidden'
+              boxShadow: 1
             }}
           >
             <Box>
-              <Typography variant="h6" component="div" sx={{ color: '#fff', fontWeight: 600 }}>
+              <Typography variant="h6" sx={{ color: '#fff', fontWeight: 600 }}>
                 Sistem Informasi Asrama Mahasiswa Lambung Mangkurat WASAKA-1
               </Typography>
               <Typography variant="body2" sx={{ color: 'rgba(255,255,255,0.95)', mt: 0.5, maxWidth: 760 }}>
@@ -111,14 +127,14 @@ const Default = () => {
         {/* TOP ROW */}
         <Grid item xs={12}>
           <Grid container spacing={2}>
-            {topRow.map((m) => renderCard(m))}
+            {topRow.map(renderCard)}
           </Grid>
         </Grid>
 
         {/* BOTTOM ROW */}
         <Grid item xs={12}>
           <Grid container spacing={2}>
-            {bottomRow.map((m) => renderCard(m))}
+            {bottomRow.map(renderCard)}
           </Grid>
         </Grid>
       </Grid>
