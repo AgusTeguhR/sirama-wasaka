@@ -14,58 +14,15 @@ import Inventory2OutlinedIcon from '@mui/icons-material/Inventory2Outlined';
 
 const Default = () => {
   const theme = useTheme();
-  // Ambil base name dari .env (hanya bisa lewat import.meta.env)
-  const rawBase = import.meta.env.VITE_APP_BASE_NAME || '';
 
-  // Normalisasi base URL agar selalu dimulai dengan "/"
-  const API_URL = rawBase ? `/${rawBase.replace(/^\/+/, '')}` : '';
-
-  // Helper untuk menggabungkan baseURL + path
-  const makeURL = (path) => `${API_URL}${path}`;
-
+  // jangan prefiх BASE di sini — biarkan path route ("/anggota", "/tagihan", dsb.)
   const menuCards = [
-    {
-      id: 'dashboard',
-      title: 'Dashboard',
-      url: makeURL('/dashboard'),
-      icon: HomeOutlinedIcon,
-      description: 'Ringkasan dan statistik utama aplikasi'
-    },
-    {
-      id: 'administrasi',
-      title: 'Administrasi',
-      url: makeURL('/surat-masuk'),
-      icon: FolderOutlinedIcon,
-      description: 'Manajemen surat, arsip, LPJ, dan file asrama'
-    },
-    {
-      id: 'anggota',
-      title: 'Anggota',
-      url: makeURL('/anggota'),
-      icon: PeopleOutlinedIcon,
-      description: 'Daftar anggota dan profil'
-    },
-    {
-      id: 'tagihan',
-      title: 'Tagihan',
-      url: makeURL('/tagihan'),
-      icon: CreditCardOutlinedIcon,
-      description: 'Kelola tagihan dan pembayaran'
-    },
-    {
-      id: 'keuangan',
-      title: 'Keuangan',
-      url: makeURL('/keuangan'),
-      icon: BarChartOutlinedIcon,
-      description: 'Laporan dan arus kas'
-    },
-    {
-      id: 'inventaris',
-      title: 'Inventarisasi',
-      url: makeURL('/inventaris'),
-      icon: Inventory2OutlinedIcon,
-      description: 'Manajemen barang dan aset'
-    }
+    { id: 'dashboard', title: 'Dashboard', url: '/dashboard', icon: HomeOutlinedIcon, description: 'Ringkasan...' },
+    { id: 'administrasi', title: 'Administrasi', url: '/surat-masuk', icon: FolderOutlinedIcon, description: 'Manajemen surat...' },
+    { id: 'anggota', title: 'Anggota', url: '/anggota', icon: PeopleOutlinedIcon, description: 'Daftar anggota...' },
+    { id: 'tagihan', title: 'Tagihan', url: '/tagihan', icon: CreditCardOutlinedIcon, description: 'Kelola tagihan...' },
+    { id: 'keuangan', title: 'Keuangan', url: '/keuangan', icon: BarChartOutlinedIcon, description: 'Laporan dan arus kas' },
+    { id: 'inventaris', title: 'Inventarisasi', url: '/inventaris', icon: Inventory2OutlinedIcon, description: 'Manajemen barang...' }
   ];
 
   const topRow = menuCards.slice(0, 3);
