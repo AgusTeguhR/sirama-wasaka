@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:4000/keuangan'; // endpoint utama backend
+const API_URL = 'https://backend-asrama.vercel.app/keuangan'; // endpoint utama backend
 
 export const getAll = () => {
   return axios.get(API_URL);

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:4000/arsip'; // sesuaikan
+const API_URL = 'https://backend-asrama.vercel.app/arsip'; // sesuaikan
 
 export const getAllArsip = async () => {
   return axios.get(API_URL);

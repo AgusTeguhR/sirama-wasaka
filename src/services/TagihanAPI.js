@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:4000/tagihan'; // sesuaikan
+const API_URL = 'https://backend-asrama.vercel.app/tagihan'; // sesuaikan
 
 export const getAll = async () => {
   return axios.get(API_URL);

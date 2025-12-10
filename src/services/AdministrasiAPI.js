@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL_SURAT = 'http://localhost:4000/surat'; // sesuaikan
+const API_URL_SURAT = 'https://backend-asrama.vercel.app/surat'; // sesuaikan
 
 export const getAllSuratMasuk = async () => {
   return axios.get(`${API_URL_SURAT}/masuk`);
