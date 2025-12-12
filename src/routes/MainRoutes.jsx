@@ -12,6 +12,7 @@ const Anggota = Loadable(lazy(() => import('views/Anggota/Index')));
 const Keuangan = Loadable(lazy(() => import('views/Keuangan/Index')));
 const Arsip = Loadable(lazy(() => import('views/Arsip/Index')));
 const Tagihan = Loadable(lazy(() => import('views/Keuangan/Tagihan')));
+const Login = Loadable(lazy(() => import('views/Login/index')));
 
 // ==============================|| MAIN ROUTES ||============================== //
 
@@ -34,7 +35,8 @@ const MainRoutes = {
     { path: '/anggota', element: <Anggota /> },
     { path: '/keuangan', element: <Keuangan /> },
     { path: '/arsip', element: <Arsip /> },
-    { path: '/tagihan', element: <Tagihan /> }
+    { path: '/tagihan', element: <Tagihan /> },
+    { path: '/login', element: <Login /> }
   ]
 };
 

@@ -9,7 +9,7 @@ import { Card, CardContent, Typography, Grid } from '@mui/material';
 import AuthLogin from './AuthLogin';
 
 // assets
-import Logo from 'assets/images/logo-dark.svg';
+import Logo from 'assets/images/Logo Asrama.png';
 
 // ==============================|| LOGIN ||============================== //
 
@@ -39,39 +39,26 @@ const Login = () => {
           }}
         >
           <CardContent sx={{ p: theme.spacing(5, 4, 3, 4) }}>
-            <Grid container direction="column" spacing={4} justifyContent="center">
+            <Grid container direction="column" spacing={2} justifyContent="center">
               <Grid item xs={12}>
                 <Grid container justifyContent="space-between">
                   <Grid item>
-                    <Typography color="textPrimary" gutterBottom variant="h2">
-                      Sign in
+                    <Typography color="textPrimary" gutterBottom variant="h3">
+                      Selamat Datang
                     </Typography>
                     <Typography variant="body2" color="textSecondary">
-                      To keep connected with us.
+                      Sistem Informasi Asrama Wasaka-1 ULM
                     </Typography>
                   </Grid>
                   <Grid item>
                     <RouterLink to="/">
-                      <img alt="Auth method" src={Logo} />
+                      <img alt="Auth method" src={Logo} style={{ width: '62px', height: 'auto' }} />
                     </RouterLink>
                   </Grid>
                 </Grid>
               </Grid>
               <Grid item xs={12}>
                 <AuthLogin />
-              </Grid>
-              <Grid container justifyContent="flex-start" sx={{ mt: theme.spacing(2), mb: theme.spacing(1) }}>
-                <Grid item>
-                  <Typography
-                    variant="subtitle2"
-                    color="secondary"
-                    component={RouterLink}
-                    to="/application/register"
-                    sx={{ textDecoration: 'none', pl: 2 }}
-                  >
-                    Create new account
-                  </Typography>
-                </Grid>
               </Grid>
             </Grid>
           </CardContent>
